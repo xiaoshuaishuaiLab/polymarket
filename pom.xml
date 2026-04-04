@@ -17,7 +17,7 @@
     <description>polymarket</description>
 
     <modules>
-        <module>polymarket-listener</module>
+        <module>polymarket-bot</module>
     </modules>
     <url/>
     <licenses>

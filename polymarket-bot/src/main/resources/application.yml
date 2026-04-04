@@ -3,7 +3,7 @@ server:
 
 spring:
   application:
-    name: polymarket-listener
+    name: polymarket-bot
   profiles:
     active: dev
 

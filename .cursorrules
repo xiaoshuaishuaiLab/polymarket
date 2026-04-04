@@ -1,0 +1,20 @@
+
+#  (Communication & Code Guidelines)
+
+## 1. Communication Language
+- Must always use **Chinese (Simplified)** to answer my questions, explain code logic, provide architectural suggestions, and summarize.
+
+## 2. Code Comments
+- **All code comments must be in English**. This includes Javadoc, single-line comments (`//`), multi-line comments (`/* */`), and TODO markers.
+- Do not write Chinese in the source code unless explicitly required by business logic (e.g., specific Chinese string constants, internationalization copy).
+
+## 3. Java & JDK 21 Guidelines
+- This project uses **Java 21**. When generating, refactoring, or optimizing code, prioritize and try to use the new features of JDK 21 and modern Java:
+  - **Pattern Matching:** Actively use pattern matching for `instanceof`, and pattern matching for `switch` expressions/statements.
+  - **Records:** Prefer using the `record` keyword to define immutable data carriers (such as DTOs, VOs, configuration classes), and combine them with Record Patterns for deconstruction.
+  - **Sequenced Collections:** When dealing with ordered collections, use the new methods (such as `getFirst()`, `getLast()`, `reversed()`) provided by the `SequencedCollection`, `SequencedSet`, and `SequencedMap` interfaces introduced in Java 21.
+  - **Virtual Threads:** In scenarios involving concurrency, asynchronous tasks, or high-concurrency I/O, prioritize recommending and using virtual threads (`Thread.ofVirtual()`, `Executors.newVirtualThreadPerTaskExecutor()`) over traditional platform threads.
+  - **Switch Expressions:** Prefer using `switch` expressions with the arrow `->` syntax and `yield`, replacing lengthy traditional `switch-case` statements.
+  - **Text Blocks:** For multi-line strings (such as JSON, SQL, HTML templates), text blocks (`"""`) must be used.
+  - **Sealed Classes:** Use `sealed` interfaces or classes when it is necessary to restrict the class inheritance hierarchy (such as defining specific state machines or error types in Domain-Driven Design).
+  - **Local-Variable Type Inference:** Use the `var` keyword reasonably when the type of the local variable is clear and does not affect readability.
