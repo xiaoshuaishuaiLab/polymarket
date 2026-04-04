@@ -28,3 +28,7 @@ target/
 /log
 generate/
 
+/conditional-tokens-contracts/
+/ctf-exchange/
+/exchange-fee-module/
+/neg-risk-ctf-adapter/
