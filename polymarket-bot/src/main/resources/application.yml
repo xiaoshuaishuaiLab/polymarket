@@ -7,3 +7,11 @@ spring:
   profiles:
     active: dev
 
+polymarket:
+  ws:
+    url: wss://ws-subscriptions-clob.polymarket.com/ws/market
+    shard-max-size: 50
+    reconnect-initial-delay: 1000
+    reconnect-max-delay: 30000
+    ping-interval: 10000
+
