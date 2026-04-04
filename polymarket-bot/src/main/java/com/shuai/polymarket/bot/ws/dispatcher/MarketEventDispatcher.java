@@ -22,7 +22,7 @@ public class MarketEventDispatcher {
         if (event == null) {
             return;
         }
-        log.debug("Dispatching market event: type={} assetId={}", event.getEventType(), event.getAssetId());
+        log.info("MarketEvent received: {}", event);
         eventPublisher.publishEvent(new MarketEventWrapper(this, event));
     }
 }
