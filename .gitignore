@@ -28,5 +28,5 @@ target/
 /log
 generate/
 .specstory
-#.cursorindexingignore
-#.cursorrules
+.cursorindexingignore
+.cursorrules
