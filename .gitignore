@@ -33,3 +33,5 @@ generate/
 /tmp
 .vscode
 .claude
+polymarket-bot/src/main/resources/application-dev.yml
+
