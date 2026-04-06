@@ -51,7 +51,7 @@ public class CodeGenerator {
         FastAutoGenerator.create(DB_URL, DB_USERNAME, DB_PASSWORD)
                 .globalConfig(builder -> builder
                         .author("shuai")
-                        .outputDir(PROJECT_PATH + "polymarket-bot//src/main/java")
+                        .outputDir(PROJECT_PATH + "/polymarket-bot/src/main/java")
                         .commentDate("yyyy-MM-dd")
                         .disableOpenDir()
                 )
@@ -59,30 +59,27 @@ public class CodeGenerator {
                         .parent(BASE_PACKAGE)
                         .entity("entity")
                         .mapper("mapper")
-                        .service("service")
-                        .serviceImpl("service.impl")
-                        .controller("controller")
                         .pathInfo(Map.of(
-                                OutputFile.xml, PROJECT_PATH + "polymarket-bot/src/main/resources/mapper"
+                                OutputFile.xml, PROJECT_PATH + "/polymarket-bot/src/main/resources/mapper"
                         ))
                 )
                 .strategyConfig(builder -> {
-                    var entityBuilder = builder
+                    builder
                             .addInclude(TABLES)
                             .entityBuilder()
                             .naming(NamingStrategy.underline_to_camel)
                             .columnNaming(NamingStrategy.underline_to_camel)
                             .enableLombok()
                             .enableTableFieldAnnotation()
-                            .logicDeleteColumnName("deleted");
-
-                    entityBuilder.mapperBuilder()
+                            .logicDeleteColumnName("deleted")
+                            .mapperBuilder()
                             .enableMapperAnnotation()
                             .enableBaseResultMap()
-                            .enableBaseColumnList();
-
-                    entityBuilder.controllerBuilder()
-                            .enableRestStyle();
+                            .enableBaseColumnList()
+                            .serviceBuilder()
+                            .disable()  // Disable ITestService and TestServiceImpl generation
+                            .controllerBuilder()
+                            .disable(); // Disable TestController generation
                 })
                 .execute();
     }
