@@ -32,3 +32,4 @@ generate/
 .cursorrules
 /tmp
 .vscode
+.claude
