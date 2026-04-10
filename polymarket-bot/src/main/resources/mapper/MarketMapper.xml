@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.shuai.polymarket.bot.mapper.MarketMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.shuai.polymarket.bot.entity.Market">
+        <id column="id" property="id" />
+        <result column="market_id" property="marketId" />
+        <result column="event_id" property="eventId" />
+        <result column="condition_id" property="conditionId" />
+        <result column="question" property="question" />
+        <result column="slug" property="slug" />
+        <result column="resolution_source" property="resolutionSource" />
+        <result column="image" property="image" />
+        <result column="icon" property="icon" />
+        <result column="description" property="description" />
+        <result column="outcomes" property="outcomes" />
+        <result column="outcome_prices" property="outcomePrices" />
+        <result column="clob_token_ids" property="clobTokenIds" />
+        <result column="volume" property="volume" />
+        <result column="liquidity" property="liquidity" />
+        <result column="active" property="active" />
+        <result column="closed" property="closed" />
+        <result column="archived" property="archived" />
+        <result column="isNew" property="isNew" />
+        <result column="featured" property="featured" />
+        <result column="restricted" property="restricted" />
+        <result column="enable_order_book" property="enableOrderBook" />
+        <result column="order_price_min_tick_size" property="orderPriceMinTickSize" />
+        <result column="order_min_size" property="orderMinSize" />
+        <result column="group_item_title" property="groupItemTitle" />
+        <result column="group_item_threshold" property="groupItemThreshold" />
+        <result column="question_id" property="questionId" />
+        <result column="neg_risk" property="negRisk" />
+        <result column="neg_risk_market_id" property="negRiskMarketId" />
+        <result column="neg_risk_request_id" property="negRiskRequestId" />
+        <result column="spread" property="spread" />
+        <result column="best_bid" property="bestBid" />
+        <result column="best_ask" property="bestAsk" />
+        <result column="last_trade_price" property="lastTradePrice" />
+        <result column="one_hour_price_change" property="oneHourPriceChange" />
+        <result column="competitive" property="competitive" />
+        <result column="uma_bond" property="umaBond" />
+        <result column="uma_reward" property="umaReward" />
+        <result column="fee_type" property="feeType" />
+        <result column="fee_schedule" property="feeSchedule" />
+        <result column="accepting_orders" property="acceptingOrders" />
+        <result column="start_date" property="startDate" />
+        <result column="end_date" property="endDate" />
+        <result column="created_at" property="createdAt" />
+        <result column="updated_at" property="updatedAt" />
+        <result column="deleted" property="deleted" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, market_id, event_id, condition_id, question, slug, resolution_source, image, icon, description, outcomes, outcome_prices, clob_token_ids, volume, liquidity, active, closed, archived, isNew, featured, restricted, enable_order_book, order_price_min_tick_size, order_min_size, group_item_title, group_item_threshold, question_id, neg_risk, neg_risk_market_id, neg_risk_request_id, spread, best_bid, best_ask, last_trade_price, one_hour_price_change, competitive, uma_bond, uma_reward, fee_type, fee_schedule, accepting_orders, start_date, end_date, created_at, updated_at, deleted
+    </sql>
+
+</mapper>

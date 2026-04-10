@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.shuai.polymarket.bot.mapper.EventMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.shuai.polymarket.bot.entity.Event">
+        <id column="id" property="id" />
+        <result column="event_id" property="eventId" />
+        <result column="series_id" property="seriesId" />
+        <result column="ticker" property="ticker" />
+        <result column="slug" property="slug" />
+        <result column="title" property="title" />
+        <result column="description" property="description" />
+        <result column="resolution_source" property="resolutionSource" />
+        <result column="image" property="image" />
+        <result column="icon" property="icon" />
+        <result column="active" property="active" />
+        <result column="closed" property="closed" />
+        <result column="archived" property="archived" />
+        <result column="isNew" property="isNew" />
+        <result column="featured" property="featured" />
+        <result column="restricted" property="restricted" />
+        <result column="liquidity" property="liquidity" />
+        <result column="volume" property="volume" />
+        <result column="open_interest" property="openInterest" />
+        <result column="competitive" property="competitive" />
+        <result column="volume_24hr" property="volume24hr" />
+        <result column="volume_1wk" property="volume1wk" />
+        <result column="volume_1mo" property="volume1mo" />
+        <result column="volume_1yr" property="volume1yr" />
+        <result column="enable_order_book" property="enableOrderBook" />
+        <result column="liquidity_clob" property="liquidityClob" />
+        <result column="neg_risk" property="negRisk" />
+        <result column="neg_risk_market_id" property="negRiskMarketId" />
+        <result column="comment_count" property="commentCount" />
+        <result column="event_date" property="eventDate" />
+        <result column="start_date" property="startDate" />
+        <result column="end_date" property="endDate" />
+        <result column="created_at" property="createdAt" />
+        <result column="updated_at" property="updatedAt" />
+        <result column="deleted" property="deleted" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, event_id, series_id, ticker, slug, title, description, resolution_source, image, icon, active, closed, archived, isNew, featured, restricted, liquidity, volume, open_interest, competitive, volume_24hr, volume_1wk, volume_1mo, volume_1yr, enable_order_book, liquidity_clob, neg_risk, neg_risk_market_id, comment_count, event_date, start_date, end_date, created_at, updated_at, deleted
+    </sql>
+
+</mapper>

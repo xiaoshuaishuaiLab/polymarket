@@ -41,7 +41,7 @@ public class CodeGenerator {
 
     // Tables to generate; leave empty to generate all tables
     private static final String[] TABLES = {
-           "market"
+
     };
 
     private static final String BASE_PACKAGE = "com.shuai.polymarket.bot";
@@ -75,6 +75,7 @@ public class CodeGenerator {
                             .mapperBuilder()
                             .enableMapperAnnotation()
                             .enableBaseResultMap()
+                            .enableFileOverride()
                             .enableBaseColumnList()
                             .serviceBuilder()
                             .disable()  // Disable ITestService and TestServiceImpl generation

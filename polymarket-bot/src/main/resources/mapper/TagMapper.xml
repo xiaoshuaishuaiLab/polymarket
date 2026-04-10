@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.shuai.polymarket.bot.mapper.TagMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.shuai.polymarket.bot.entity.Tag">
+        <id column="id" property="id" />
+        <result column="tag_id" property="tagId" />
+        <result column="label" property="label" />
+        <result column="slug" property="slug" />
+        <result column="force_show" property="forceShow" />
+        <result column="is_carousel" property="isCarousel" />
+        <result column="published_at" property="publishedAt" />
+        <result column="created_at" property="createdAt" />
+        <result column="updated_at" property="updatedAt" />
+        <result column="deleted" property="deleted" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, tag_id, label, slug, force_show, is_carousel, published_at, created_at, updated_at, deleted
+    </sql>
+
+</mapper>
