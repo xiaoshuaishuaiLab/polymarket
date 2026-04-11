@@ -17,7 +17,10 @@ import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.OffsetDateTime;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeFormatterBuilder;
 import java.time.format.DateTimeParseException;
+import java.time.temporal.ChronoField;
 
 @Slf4j
 @Component
@@ -289,7 +292,7 @@ public class EventSyncJob {
         tag.setSlug(json.getString("slug"));
         tag.setForceShow(json.getBoolean("forceShow"));
         tag.setIsCarousel(json.getBoolean("isCarousel"));
-        tag.setPublishedAt(parseDateTime(json.getString("publishedAt")));
+        tag.setPublishedAt(parseDateTimeLoose(json.getString("publishedAt")));
         tag.setCreatedAt(parseDateTime(json.getString("createdAt")));
         tag.setUpdatedAt(parseDateTime(json.getString("updatedAt")));
         tagMapper.insert(tag);
@@ -330,6 +333,24 @@ public class EventSyncJob {
             return OffsetDateTime.parse(value).toLocalDateTime();
         } catch (DateTimeParseException e) {
             log.warn("Failed to parse datetime: {}", value);
+            return null;
+        }
+    }
+
+    // Handles PostgreSQL format: "2023-11-02 21:15:31.924+00" (space separator, short timezone offset)
+    private static final DateTimeFormatter POSTGRES_DATETIME_FORMATTER =
+            new DateTimeFormatterBuilder()
+                    .appendPattern("yyyy-MM-dd HH:mm:ss")
+                    .optionalStart().appendFraction(ChronoField.NANO_OF_SECOND, 0, 9, true).optionalEnd()
+                    .appendPattern("x")
+                    .toFormatter();
+
+    private LocalDateTime parseDateTimeLoose(String value) {
+        if (value == null || value.isBlank()) return null;
+        try {
+            return OffsetDateTime.parse(value, POSTGRES_DATETIME_FORMATTER).toLocalDateTime();
+        } catch (DateTimeParseException e) {
+            log.warn("Failed to parse datetime (loose): {}", value);
             return null;
         }
     }
