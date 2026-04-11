@@ -33,6 +33,8 @@ mybatis-plus:
       logic-not-delete-value: 0
 
 polymarket:
+  gamma:
+    api-url: https://gamma-api.polymarket.com
   ws:
     url: wss://ws-subscriptions-clob.polymarket.com/ws/market
     shard-max-size: 50

@@ -75,7 +75,7 @@ public class CodeGenerator {
                             .mapperBuilder()
                             .enableMapperAnnotation()
                             .enableBaseResultMap()
-                            .enableFileOverride()
+//                            .enableFileOverride()
                             .enableBaseColumnList()
                             .serviceBuilder()
                             .disable()  // Disable ITestService and TestServiceImpl generation

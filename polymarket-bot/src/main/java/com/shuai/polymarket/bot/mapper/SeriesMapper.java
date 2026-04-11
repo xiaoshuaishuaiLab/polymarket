@@ -10,7 +10,7 @@ import org.apache.ibatis.annotations.Mapper;
  * </p>
  *
  * @author shuai
- * @since 2026-04-10
+ * @since 2026-04-11
  */
 @Mapper
 public interface SeriesMapper extends BaseMapper<Series> {
