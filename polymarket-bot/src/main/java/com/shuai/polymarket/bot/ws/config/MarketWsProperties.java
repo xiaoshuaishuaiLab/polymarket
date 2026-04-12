@@ -4,9 +4,6 @@ import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
 
-import java.util.ArrayList;
-import java.util.List;
-
 @Data
 @Component
 @ConfigurationProperties(prefix = "polymarket.ws")
@@ -26,7 +23,4 @@ public class MarketWsProperties {
 
     /** PING interval in milliseconds */
     private long pingInterval = 10000L;
-
-    /** Token IDs to subscribe on startup */
-    private List<String> initialTokens = new ArrayList<>();
 }
